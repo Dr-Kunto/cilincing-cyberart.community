@@ -1,186 +1,125 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="robots" content="noindex" />
-<META NAME="GOOGLEBOT" CONTENT="NOINDEX" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<script type="text/javascript" src="http://jwpsrv.com/library/MCK8hplLEeOY0CIACmOLpg.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-<style type="text/css">
-*{margin:0;padding:0}#picasa{position:absolute;width:100%!important;height:100%!important}
-</style>
-<style>
-#kelik {
-    z-index: 102;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    position: absolute;
-    z-index:9998;
-}
-#dloadmen{
-    display: block;
-    position: absolute;
-    top:6px;
-	right:4px;
-	padding:30px;
-    background-color: rgba(224, 29, 29, 0);
-    z-index: 999;
-}
-#btmx{width:100%;height:92%;bottom:32px;z-index:9999;position:absolute;}
-#btmx .centered{max-width:300px;overflow:hidden;margin-top:50px;}
-#btmx .bgclose{font-size:14px;line-height:25px;color:#FFF;background:#01B0F0;cursor:pointer;}
-#btmx .ctx{max-width:300px;max-height:250px;}
-</style>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                <title>RCTI</title>
+        <link href='https://dr-kunto.github.io/HTML5/Privacy.ico' rel='shortcut icon'>
+            <script type="text/javascript" src="http://jwpsrv.com/library/MCK8hplLEeOY0CIACmOLpg.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://0jodumeh.000webhostapp.com/tests.css"  media="all" />
+             <style type="text/css">html, body, .video-unavailable, video, img, .video-js{width:100%!important;height:100%!important;overflow:hidden;}.video-unavailable{background-color:#000;text-align:center;color:#FFF;font-size:16px;font-family:arial,helvetica,sans-serif;}.video-unavailable p{padding:50px;line-height:1.5em;}.jw-icon-next{display:none!important;}</style>
+
+    </head>
 <body>
-</div>
-</div>
-</div>
-<div id="kelik"></div>
-<div>
-<center>
-<div id="picasa" class="picasa"></div>
-<script>
-var mirror = 0;
-try{
-	//by adding this, we actually don't need first_play variable, but daijoubu desu...
-	localStorage.setItem("jwplayer.qualityLabel", "Auto");
-}catch(e){
-	console.warn(e);
-};
-</script>
+<h1>Setup Examples</h1>
+
+<h2>Video Playlist (with aria-label translated in French)</h2>
+
+<div id="video-container">before set up</div>
 <script type="text/javascript">
-	
-	var current_url = "https://acefile.co/local/1870576";
-	var first_play = true;
-	var error_handle = mirror == 0;
-	var is_child = 0;
-	var child_msg = "";
-	var gov_autoplay = false || false || false;
-    var playerInstance = jwplayer("picasa");
-        playerInstance.setup({
-		preload: (gov_autoplay?"auto":"none"),
-        id:'picasa',
-        controls: true,
-        displaytitle: true,
-        width: "100%",
-        height: "100%",
-        aspectratio: "16:9",
-        fullscreen: "true",
-        provider: 'http',
-        autostart: gov_autoplay,
-        image:"https://acefile.co/assets/jwplayer/api.png",
-
-        sources: [{"file":"https://server.acefile.co/?gid=x6C3SS7F2015NF14bTWdEpuouCHD4iOf9&q=original&token=0535127799","label":"Auto","type":"mp4","default":true},{"file":"https://s2.acefile.co/?gid=015NF14b6T3xSCFS27WdEpuouC4HOD9if&q=18&token=0535126774","label":360,"type":"mp4"},{"file":"https://s2.acefile.co/?gid=015NF14b6T3xSCFS27WdEpuouC4HOD9if&q=18&token=0535126774","label":480,"type":"mp4"},{"file":"https://s2.acefile.co/?gid=x6C3SS7F2015NF14bTWdEpuouCHD4iOf9&q=original&token=0535126774","label":720,"type":"mp4"}],
-     captions: {
-        color: '#FFFFFF',
-        fontSize: 20,
-        backgroundOpacity: 20
-    },
-    });
-     var u_mark = window.location.href.indexOf("?") >= 0?"&":"?";
-	 playerInstance.on("play", function(){
-		 //on first play and no error found
-		 if (first_play && error_handle){
-			 playerInstance.setCurrentQuality(mirror);
-			 first_play = false;
-		 }
-	 });
-     playerInstance.on('error', function(){
-        //console.log("EEE");
-        if (error_handle){
-			console.log("trying to get another resolution");
-			var source_length = playerInstance.getPlaylist()[0].allSources.length;
-			console.log("quality length is : "+source_length);
-			if (is_child == 0 && source_length > 2){
-				window.location.replace(current_url + "?use_mirror=1"+child_msg);
-			}else{
-				window.location.replace(current_url + "?p=2"+child_msg);
-			}
-			error_handle = false;
-		}else{
-			console.log("redirect to other resource");
-			window.location.replace(current_url + "?p=2"+child_msg);
-		}
-     });                               
-     playerInstance.on('setupError', function(){
-         //console.log("EEE");
-        if (error_handle){
-			console.log("trying to get another resolution");
-			var source_length = playerInstance.getPlaylist()[0].allSources.length;
-			console.log("quality length is : "+source_length);
-			if (is_child == 0 && source_length > 2){
-				window.location.replace(current_url + "?use_mirror=1"+child_msg);
-			}else{
-				window.location.replace(current_url + "?p=2"+child_msg);
-			}
-			error_handle = false;
-		}else{
-			console.log("redirect to other resource");
-			window.location.replace(current_url + "?p=2"+child_msg);
-		}
-     });    
-	
-
-                                                            
+(function(jwplayer) {
+    var config = {
+        // autostart: true,
+        width: '100%',
+        aspectratio: '16:9',
+        localization: {
+            play: 'Lecture',
+            playback: 'Lancer la lecture',
+            pause: 'Pause',
+            volume: 'Volume',
+            prev: 'Précédent',
+            next: 'Suivant',
+            cast: 'Chromecast',
+            airplay: 'AirPlay',
+            fullscreen: 'Plein écran',
+            playlist: 'Liste de lecture',
+            hd: 'Qualité',
+            cc: 'Sous-titres',
+            audioTracks: 'Pistes audio',
+            replay: 'Rejouer',
+            buffer: 'Chargement',
+            more: 'Plus',
+            liveBroadcast: 'Diffusion en direct',
+            loadingAd: 'Chargement de la publicité'
+        },
+        playlist: [
+            {
+                image:'http://content.bitsontherun.com/thumbs/3XnJSIm4-480.jpg',
+                sources: [
+                    {file: '//content.bitsontherun.com/videos/3XnJSIm4-52qL9xLP.mp4'},
+                    {file: '//content.bitsontherun.com/videos/3XnJSIm4-27m5HpIu.webm'}
+                ],
+                tracks: [
+                    { file: 'assets/thumbs.vtt', kind: 'thumbnails' },
+                    {file: '//playertest.longtailvideo.com/chapters/sintel-chapters.vtt', kind: 'chapters'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-ch.srt', label: 'Chinese'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-fa.srt', label: 'Farsi'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-gr.srt', label: 'Greek'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-jp.srt', label: 'Japanese'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-ko.srt', label: 'Korean'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-pl.srt', label: 'Polish'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-ru.srt', label: 'Russian'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-sp.srt', label: 'Spanish'},
+                    {file: '//playertest.longtailvideo.com/captions/sintel-tr.srt', label: 'Turkish'}
+                ],
+                description : 'Scales!',
+                title: 'Sintel is such a good movie, sometimes I wonder why it wasnt a feature film'
+            },
+            {
+                sources: [
+                    {file: '//content.bitsontherun.com/videos/bkaovAYt-52qL9xLP.mp4'},
+                    {file: '//content.bitsontherun.com/videos/bkaovAYt-27m5HpIu.webm'}
+                ],
+                tracks: [
+                    {file: '//playertest.longtailvideo.com/chapters/bunny-chapters.vtt', kind: 'chapters'},
+                    {file: '//playertest.longtailvideo.com/captions/bunny-en.srt', label: 'English'},
+                    {file: '//playertest.longtailvideo.com/captions/bunny-ned.txt', label: 'Dutch'}
+                ],
+                title: 'Big Buck Bunny'
+            },
+            {
+                file: '//playertest.longtailvideo.com/flv-cuepoints/honda_accord.flv',
+                title: 'FLV'
+            },
+            {
+                file: '//www.youtube.com/watch?v=YE7VzlLtp-4',
+                title: 'YouTube'
+            },
+            {
+                file: 'not a playable option',
+                title: 'Filtered Out of Playlist'
+            }
+        ],
+        captions: {
+            preprocessor: function(rawText){ return rawText.replace(/e/g,'E') }
+        }
+    };
+    var jwp = jwplayer('video-container').setup(config);
+    jwp.addButton(
+        'css-skins/icons/both.png',
+        'TEST',
+        function() {
+            console.log('first');
+        },
+        'first'
+    );
+    jwp.addButton(
+        'css-skins/icons/both.png',
+        '',
+        function() {
+            console.log('first');
+        },
+        'first',
+        'custom-class-1'
+    );
+    jwp.addButton(
+        'css-skins/icons/both.png',
+        'Click to delete me!',
+        function() {
+            jwp.removeButton('second');
+        },
+        'second',
+        'custom-class-2'
+    );
+})(window.jwplayer);
 </script>
-<script>
-function popup_delay(){
-	
-	if (typeof(Cookies.get('plp')) == "undefined") {
-		var cookie_expire = new Date(new Date().getTime() + 2 * 60 * 1000);
-		Cookies.set('plp', new Date().getTime(), { expires: cookie_expire });
-		console.log("return false;");
-		return false;
-	}else{
-		console.log("return true;");
-		return true;
-	}
-	
-}
-function popup_ads(){
-	if (popup_delay()){
-		return false;
-	}
-	var pop_url = "https://goo.gl/S7vzBu";
-	var newwin = window.open(pop_url, "_BLANK");
-	newwin.blur();
-	window.focus();
-	return true;
-}
-</script>
-<script>
-var closedx = document.getElementById("closed");
-closedx.addEventListener("click", function(){
-  popup_ads();
-  playerInstance.play();
-  document.getElementById("btmx").style.display = 'none';
-});
-function jump(t){
-	//document.getElementById("btmx").style.display = 'none';
-	window.open(t.href, "_BLANK");
-	return false;
-}
-document.getElementById("kelik").addEventListener("click", function(){
-	this.style.display = 'none';
-	
-});
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-		
-    }
-  };
-  xhttp.open("POST", "https://acefile.co/files/check/1870576", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("ctoken=a9b074dc3d103647c74487bfa48c5c62");
-}
-loadDoc();
-</script>
-</center>
-</div>
 </body>
 </html>
