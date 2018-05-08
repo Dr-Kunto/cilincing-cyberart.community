@@ -1,4 +1,4 @@
-ar isCtrl = false;
+var isCtrl = false;
 document.onkeyup=function(e)
 {
 if(e.which == 17)
