@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <video id="video" controls></video>
-    <script>
-    if(Hls.isSupported())
-    {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('https://cdn-livetv2.metube.id/hls/tvri.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function()
-        {
-            video.play();
-        });
-    }
-    else if (video.canPlayType('application/vnd.apple.mpegurl'))
-    {
-        video.src = 'https://cdn-livetv2.metube.id/hls/tvri.m3u8';
-        video.addEventListener('canplay',function()
-        {
-            video.play();
-        });
-    }
-    </script>
+    <script src="http://jwpsrv.com/library/myjwplayerkey.js"></script>
+<div id="myElement"></div>
+<script> 
+jwplayer("myElement").setup({ 
+file: "https://cdn-livetv2.metube.id/hls/tvri.m3u8", 
+width: 640, 
+height: 360 
+}); 
+</script>
   </body>
 </html>
