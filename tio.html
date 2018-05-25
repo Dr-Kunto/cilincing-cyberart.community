@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
   <body>
-    	<!-- JQuery is required! -->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	  <script type='text/javascript' src='http://testersite.byethost22.com/jwplayer2/jwplayer.js'></script>
 
-</head>
+<div id='mediaplayer'></div>
 
-<body>
-    <div id="content">
-	<h1>KeyCDN JW Player HLS Demo</h1>
-	
-	<script src="http://jwpsrv.com/library/4+R8PsscEeO69iIACooLPQ.js"></script>
-	
-	<div id="my-video"></div>
-	<script type="text/javascript">
-		jwplayer("my-video").setup({
-			file: "https://cdn-livetv2.metube.id/hls/tvri.m3u8",
-			width: "530",
-			height: "300",
-			primary: "html",
-		});
-	</script>
+<script type="text/javascript">
+  jwplayer('mediaplayer').setup({
+    'id': 'playerID',
+    'width': '480',
+    'height': '270',
+    'file': 'https://cdn-livetv2.metube.id/hls/tvri.m3u8',
+    'image': '/thumbs/bunny.jpg',
+    'modes': [
+        {type: 'html5'},
+        {type: 'flash', src: 'jwplayer2/player.swf'},
+        {type: 'download'}
+    ]
+  });
+</script>
   </body>
 </html>
