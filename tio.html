@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <script src="http://jwpsrv.com/library/4MtpCNgMEeK3zBIxOQulpA.js"></script>
-<div id="myElement"></div>
-<script> 
-jwplayer("myElement").setup({ 
-file: "https://cdn-livetv2.metube.id/hls/tvri.m3u8", 
-width: 640, 
-height: 360 
-}); 
+    <!-- JW Player Library -->
+<script src="http://jwpsrv.com/library/MCK8hplLEeOY0CIACmOLpg.js"></script>
+
+<div id='playerKXSDPIwKERSb'></div>
+
+<!-- Script to display video file in the player div -->
+<script type='text/javascript'>
+    jwplayer('playerKXSDPIwKERSb').setup({
+        // URL to the video file
+        file: 'https://cdn-livetv2.metube.id/hls/tvri.m3u8',
+        // URL to the image that should be shown before the video is started
+        title: 'Video',
+        width: '50%',
+        aspectratio: '16:9'
+    });
 </script>
   </body>
 </html>
