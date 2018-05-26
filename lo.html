@@ -1,42 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>CNN-Indonesia</title>
-    <link href='https://tv-stream.github.io/hls/img/Privacy.ico' rel='shortcut icon'>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://tv-stream.github.io/hls/swft/js/disable.js"></script>
-    <link href="https://tv-stream.github.io/hls/swft/js/5.19.2/video-js.css" rel="stylesheet"><!-- https://videojs.com -->
-    <style>
-    body{
-      background-color:rgba(0, 0, 0, 0.1);
+ <!--
+
+<html> 
+<head>
+<meta name="robots" content="noindex" />
+
+ </style>
+<script src="http://live3.indostreamingtv.com/player/jw8.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+</video>
+</div>
+<div class="tvdesktop">
+<div id="tvplayer">Loading Player...</div>
+<script>
+    jwplayer('tvplayer').setup({playlist:[{
+    file:'http://live3.indostreamingtv.com/live/tv22/index.m3u8'},{
+    file:'https://cdn-livetv2.metube.id/hls/sctv.m3u8',
+}],
+    width:"100%",
+    height: '100%',
+    stretching: "exactfit",
+
+    abouttext:'www.tvonline.id',
+    aboutlink:'http://www.tvonline.id/',
+    autostart:false,
+    androidhls:true,
+    displaytitle:false,
+    repeat:true,
+    stagevideo:false,
+    visualplaylist:false,
+    cast:{appid:"chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"},
+    skin: {
+    controlbar: {
+      icons: "rgba(250, 26, 26, 0.8)",
+      iconsActive: "#FFFFFF",
+      text: "#E72C2C"
+    },
+    menus: {
+      background: "#900B0B"
+    },
+    timeslider: {
+      progress: "#F32D2D",
+      rail: "rgba(233, 77, 77, 0.3)"
     }
-    #video{
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      margin: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-     </style>
-  </head>
-     <video id="video" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
-           controls autoplay preload="auto"
-           poster="../img/CNN-Indonesia.jpg"
-           data-setup='{"example_option":true}'>
-        <source src="http://live3.indostreamingtv.com/live/tv22/index.m3u8"
-                type="application/vnd.apple.mpegurl">
-        </video>
-    <script src="https://tv-stream.github.io/hls/swft/js/5.19.2/video.js"></script><!-- https://videojs.com -->
-    <script src="https://tv-stream.github.io/hls/swft/js/hls.min.js?v=v0.9.1"></script><!-- https://github.com/video-dev/hls.js -->
-    <script src="https://tv-stream.github.io/hls/swft/js/videojs-source-handler.min.js?v=0.3.1"></script><!-- https://github.com/streamroot/videojs-hlsjs-plugin -->
-    <script src="https://tv-stream.github.io/hls/swft/js/quality-picker.js?v=v0.0.2"></script><!-- https://github.com/streamroot/videojs-quality-picker -->
-    <script>
-        var player = videojs('video');
-        player.qualityPickerPlugin();
-    </script>
-  </body>
-</html>
+  },
+    primary: 'html5',
+    hlshtml: true,
+
+    advertising: {
+        client: "vast",
+        'skipoffset':15,
+        admessage: 'Your TV will resume in XX seconds.',
+         tag: ""
+  }
+    });
+     jwplayer('tvplayer').on('error',function(){if(jwplayer('tvplayer').getPlaylistIndex()>=(jwplayer('tvplayer').getPlaylist().length-1)){$('#player-play').html('<img width="100%" src="" alt="RCTI"/>');}else{jwplayer('tvplayer').next();}});
+</script></div>
+
+
+
+<!--
+
+<script type="text/javascript" src="http://live3.indostreamingtv.com/jwplayer.js"></script>
+							<script>jwplayer.key="a+eOngwyCXC50ZRrd9v0G4YLGhWXO5dbPiK/u1UGgQY="</script>
+							<div id="streaming">Loading the player ...</div>
+							
+							
+							 <script type="text/javascript">
+                            	jwplayer("streaming").setup({
+                            		sources: [{
+                            			file: "http://live3.indostreamingtv.com/live/tv2/index.m3u8"
+                            		},{
+                            			file: ""
+                            		}],
+                            		rtmp: {
+                            			bufferlength: 3
+                            		},
+                            		fallback: true,
+                                             image: '',
+        width: '100%',
+        height: '100%',
+        stretching: "exactfit",
+	'logo':{'file':'', 'hide':'false', 'out':'0.3','position':'bottom-right','link':'http://www.tvonline.id'},
+        stretching: "exactfit",
+        autostart: true,
+        androidhls:true,
+        abouttext: "www.tvonline.id Player",
+        aboutlink: "http://www.tvonline.id/",
+        primary: 'flash',
+        advertising: {
+        client: "vast",
+        'skipoffset':15,
+        admessage: 'Your TV will resume in XX seconds.',
+        tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1460704135/wid_1448986123/type_inline/cb_[timestamp]"
+  }
+    });
+                            </script>
+
+<!--
