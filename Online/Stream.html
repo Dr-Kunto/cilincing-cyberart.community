@@ -35,6 +35,20 @@ body, html {
                 .server-item{border-bottom:1px solid #c8c8cb}
                 #video #server-list a{color:#fff;text-decoration:none;border:1px solid #fff;padding:0.333333333333333em 0.666666666666667em;display:inline-block;margin:0.333333333333333em;box-sizing:border-box}a:active{background-color:#e74c3c}
    </style>
+<script type="text/javascript">
+document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            alert('not allowed');
+            return false;
+        } else {
+            return true;
+        }
+};
+</script>
 </head>       
 <body>
   <div id="wrapper">
