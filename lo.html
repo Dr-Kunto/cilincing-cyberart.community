@@ -1,94 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-                  <title>CNN-Indonesia</title>
-       <link href='https://tv-stream.github.io/akar/icon/Privacy.ico' rel='shortcut icon'>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-              <script src="https://tv-stream.github.io/akar/js/lock.js"></script>
-        <link rel="stylesheet" href="https://tv-stream.github.io/akar/css/reset.css" />
-        <link rel="stylesheet" href="https://tv-stream.github.io/akar/css/glow.css" />
-        <script src="https://tv-stream.github.io/akar/js/jwplayer.js?v=4" ></script>
-        <script>var AKAMAI_MEDIA_ANALYTICS_CONFIG_FILE_PATH = 'https://ma1330-r.analytics.edgekey.net/config/beacon-19803.xml';</script>
-        <script type="text/javascript" src="https://tv-stream.github.io/akar/js/akamaihtml5-min.js"></script>
-        <script type="text/javascript" src="https://tv-stream.github.io/akar/js/AkamaiJWPlayerLoader.js"></script>
-        <script src="https://tv-stream.github.io/akar/js/jquery.min.js"></script>
-        <script>jwplayer.key = "ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=";</script>
-        <style type="text/css">
-            html, body, .video-unavailable, video, img, .video-js {
-                width:100% !important;
-                height:100% !important;
-                overflow:hidden;
-            }
-            .video-unavailable {
-                background-color:#000;
-                text-align:center;
-                color:#FFF;
-                font-size:16px;
-                font-family:arial,helvetica,sans-serif;
-            }
-            .video-unavailable p {
-                padding:50px;
-                line-height:1.5em;
-            }
-                        .jw-icon-next {
-                display: none !important;
-            }
-                    </style>
-    <body>
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-85299917-1', 'auto');
-  ga('require', 'linkid');
-        ga('set', 'dimension1', '0');
-    ga('set', 'dimension2', '1526404160.054');
-    ga('send', 'pageview');
-</script>        <script type="text/javascript" src="https://analytics.mncdigital.id/public/js/mda.js"></script>
-<script>
-            mda_set("set", "UserId", "0");
-        mda_send();
-</script>        
-            <div id="myElement"></div>
-            <script>
-                jwplayer('myElement').setup({
-                                        playlist: [{
-                            file: 'http://live3.indostreamingtv.com/live/tv22/index.m3u8',
-                            image: "../icon/CNN-Indonesia.jpg",
-                            title: 'SCTV',
-                            mediaid: '1'
-                        }],
-                                        width: "100%",
-                    aspectratio: "16:9",
-                    abouttext: 'Tv-Stream',
-                                        stretching: "exactfit",
-                                                            aboutlink: 'https://twitter.com/dr_kunto',
-                    autostart: true,
-                    androidhls: true,
-                    displaydescription: true,
-                    displaytitle: true,
-                    visualplaylist: false,
-                    skin: {"active": "#c00", "inactive": "#fff", "name": "glow"},
-                    plugins: {
-                                            "https://tv-stream.github.io/akar/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
-                    },
-                                        ga: {
-                                                "idstring": "CNNI",
-                        "label": "214"
-                                            }
-                });
-                jwplayer('myElement').on('error', function () {
-                                    if (jwplayer('myElement').getPlaylistIndex() >= (jwplayer('myElement').getPlaylist().length - 1)) {
-                        $('#player-play').html('<img width="100%" height="431.44" src="https://tv-stream.github.io/akar/icon/error_player.jpg" alt="tvstream error player"/>');
-                    } else {
-                        jwplayer('myElement').next();
-                    }
-                                });
-                jwplayer('myElement').on('ready', function () {
-                    akaJwPlugin = new AkamaiJWPlugin(jwplayer);
-                });
-            </script>
-            <!-- END VIDEO -->     
-    </body>
+  <head>
+    <title>CNN-Indonesia</title>
+    <link href='https://tv-stream.github.io/hls/img/Privacy.ico' rel='shortcut icon'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://tv-stream.github.io/hls/swft/js/disable.js"></script>
+    <link href="https://tv-stream.github.io/hls/swft/js/5.19.2/video-js.css" rel="stylesheet"><!-- https://videojs.com -->
+    <style>
+    body{
+      background-color:rgba(0, 0, 0, 0.1);
+    }
+    #video{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+     </style>
+  </head>
+     <video id="video" style="width: 100%; height: 100%;" class="video-js vjs-default-skin vjs-big-play-centered"
+           controls autoplay preload="auto"
+           poster="../img/CNN-Indonesia.jpg"
+           data-setup='{"example_option":true}'>
+        <source src="http://live3.indostreamingtv.com/live/tv22/index.m3u8"
+                type="application/vnd.apple.mpegurl">
+        </video>
+    <script src="https://tv-stream.github.io/hls/swft/js/5.19.2/video.js"></script><!-- https://videojs.com -->
+    <script src="https://tv-stream.github.io/hls/swft/js/hls.min.js?v=v0.9.1"></script><!-- https://github.com/video-dev/hls.js -->
+    <script src="https://tv-stream.github.io/hls/swft/js/videojs-source-handler.min.js?v=0.3.1"></script><!-- https://github.com/streamroot/videojs-hlsjs-plugin -->
+    <script src="https://tv-stream.github.io/hls/swft/js/quality-picker.js?v=v0.0.2"></script><!-- https://github.com/streamroot/videojs-quality-picker -->
+    <script>
+        var player = videojs('video');
+        player.qualityPickerPlugin();
+    </script>
+  </body>
 </html>
