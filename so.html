@@ -29,6 +29,19 @@
                 display: none !important;
             }
                     </style>
+                <script type="text/javascript" src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.js?v=6"></script>
+        <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.compatibility.js"></script>
+        <script>jwplayer.key = "j2tFQkEFvPeTpNOgV8NvBb31GHpjZ6SmevhMfX86rLQ=";</script>
+        <script type="text/javascript">
+            setInterval(
+                    function () {
+                        if (jwplayer().getState() == "PLAYING") {
+                            _gaq.push(['_trackEvent', 'Live streaming', 'Concurrente', 'Live streaming']);
+                            _gaq.push(['_trackPageview', 'concurrente_supermasita']);
+                        }
+                    }
+            , 30000);
+        </script>
     <body>
         <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
