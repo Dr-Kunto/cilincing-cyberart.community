@@ -1,18 +1,35 @@
-        <script type="text/javascript" src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.js?v=6"></script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                <title>TRANS7 - meTube.id Embed</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://www.metube.id/cc-content/themes/default/css/reset.css" />
+        <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.js?v=6"></script>
         <script src="https://www.metube.id/cc-content/themes/default/jwplayer/jwplayer.compatibility.js"></script>
+        <script src="https://www.metube.id/cc-content/themes/default/js/jquery.min.js"></script>
         <script>jwplayer.key = "j2tFQkEFvPeTpNOgV8NvBb31GHpjZ6SmevhMfX86rLQ=";</script>
-        <script type="text/javascript">
-            setInterval(
-                    function () {
-                        if (jwplayer().getState() == "PLAYING") {
-                            _gaq.push(['_trackEvent', 'Live streaming', 'Concurrente', 'Live streaming']);
-                            _gaq.push(['_trackPageview', 'concurrente_supermasita']);
-                        }
-                    }
-            , 30000);
-        </script>
-    </head>
-    <body class="playlive playlive english no-padding">
+        <style type="text/css">
+            html, body, .video-unavailable, video, img, .video-js {
+                width:100% !important;
+                height:100% !important;
+                overflow:hidden;
+            }
+            .video-unavailable {
+                background-color:#000;
+                text-align:center;
+                color:#FFF;
+                font-size:16px;
+                font-family:arial,helvetica,sans-serif;
+            }
+            .video-unavailable p {
+                padding:50px;
+                line-height:1.5em;
+            }
+                        .jw-icon-next {
+                display: none !important;
+            }
+                    </style>
+    <body>
         <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,7 +39,80 @@
   ga('create', 'UA-85299917-1', 'auto');
   ga('require', 'linkid');
         ga('set', 'dimension1', '0');
-    ga('set', 'dimension2', '1536171328.1173');
+    ga('set', 'dimension2', '1536171704.3851');
     ga('send', 'pageview');
 
-</script>
+</script>        
+            <div id="myElement"></div>
+            <script>
+                jwplayer('myElement').setup({
+                                        playlist: [{
+                            file: 'https://cdn-livetv1.metube.id/hls/trans7.m3u8',
+                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
+                            title: 'TRANS7',
+                            mediaid: '1'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
+                            title: 'TRANS7',
+                            mediaid: '2'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
+                            title: 'TRANS7',
+                            mediaid: '3'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
+                            title: 'TRANS7',
+                            mediaid: '4'
+                        }, {
+                            file: '',
+                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
+                            title: 'TRANS7',
+                            mediaid: '5'
+                        }],
+                                        width: "100%",
+                    aspectratio: "16:9",
+                    abouttext: 'meTube.id',
+                                        stretching: "exactfit",
+                                                            aboutlink: 'https://www.metube.id',
+                    autostart: false,
+                    androidhls: true,
+                    displaydescription: true,
+                    displaytitle: true,
+                    visualplaylist: false,
+                    skin: {"active": "#DF2148", "inactive": "#CCCCCC", "name": "glow"},
+                    plugins: {
+                                            "https://www.metube.id/cc-content/themes/default/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
+                    },
+                                                            advertising: {
+                      client: "googima",
+                      schedule: {
+                        preroll: {
+                          offset: "pre",
+                          tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/21705426382/1.1&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=https%3A%2F%2Fwww.metube.id%2Flive%2FTRANS7&description_url=https%3A%2F%2Fwww.metube.id%2Flive%2FTRANS7&cust_params=Live%3D183"
+                        }
+                      }
+                    },
+                                        ga: {
+                                                "idstring": "TRANS7",
+                        "label": "183"
+                                            }
+                });
+                jwplayer('myElement').on('error', function () {
+                                    if (jwplayer('myElement').getPlaylistIndex() >= (jwplayer('myElement').getPlaylist().length - 1)) {
+                        $('#player-play').html('<img width="100%" height="431.44" src="https://www.metube.id/cc-content/themes/default/images/metube_error_player.jpg" alt="meTube error player"/>');
+                    } else {
+                        jwplayer('myElement').next();
+                    }
+                                });
+                jwplayer('myElement').on('play', function () {
+                                     });
+                
+            </script>
+            <!-- END VIDEO -->
+
+        
+    </body>
+</html>
