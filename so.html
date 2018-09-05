@@ -55,74 +55,71 @@
     ga('set', 'dimension2', '1536171704.3851');
     ga('send', 'pageview');
 
-</script>        
-            <div id="myElement"></div>
-            <script>
-                jwplayer('myElement').setup({
-                                        playlist: [{
-                            file: 'https://cdn-livetv1.metube.id/hls/trans7.m3u8',
-                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
-                            title: 'TRANS7',
+<script>
+                jwplayer('livePlay').setup({
+                    playlist: [{
+                            file: 'https://cdn-livetv2.metube.id/hls/rcti.m3u8',
+                            image: "https://cdn-static.metube.id/live/image/sxssZAFhMbybYe3C3z6M.jpg",
+                            title: 'RCTI',
                             mediaid: '1'
                         }, {
                             file: '',
-                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
-                            title: 'TRANS7',
+                            image: "https://cdn-static.metube.id/live/image/sxssZAFhMbybYe3C3z6M.jpg",
+                            title: 'RCTI',
                             mediaid: '2'
                         }, {
                             file: '',
-                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
-                            title: 'TRANS7',
+                            image: "https://cdn-static.metube.id/live/image/sxssZAFhMbybYe3C3z6M.jpg",
+                            title: 'RCTI',
                             mediaid: '3'
                         }, {
                             file: '',
-                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
-                            title: 'TRANS7',
+                            image: "https://cdn-static.metube.id/live/image/sxssZAFhMbybYe3C3z6M.jpg",
+                            title: 'RCTI',
                             mediaid: '4'
                         }, {
                             file: '',
-                            image: "https://cdn-static.metube.id/live/image/s7oWMxLfjTmH2z7p7NEQ.jpg",
-                            title: 'TRANS7',
+                            image: "https://cdn-static.metube.id/live/image/sxssZAFhMbybYe3C3z6M.jpg",
+                            title: 'RCTI',
                             mediaid: '5'
                         }],
-                                        width: "100%",
+                    width: "100%",
                     aspectratio: "16:9",
                     abouttext: 'meTube.id',
-                                        stretching: "exactfit",
-                                                            aboutlink: 'https://www.metube.id',
-                    autostart: false,
+                    stretching: "exactfit",
+                    aboutlink: 'https://www.metube.id',
+                    autostart: true,
                     androidhls: true,
+                    controls: true,
                     displaydescription: true,
                     displaytitle: true,
+                    repeat: true,
+                    stagevideo: false,
                     visualplaylist: false,
+                    cast: {
+                        appid: "chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID"
+                    },
                     skin: {"active": "#DF2148", "inactive": "#CCCCCC", "name": "glow"},
                     plugins: {
-                                            "https://www.metube.id/cc-content/themes/default/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
+                        "https://www.metube.id/cc-content/themes/default/js/ping.js": {"pixel": "http://content.jwplatform.com/ping.gif"}
                     },
-                                                            advertising: {
+                                        advertising: {
                       client: "googima",
                       schedule: {
                         preroll: {
                           offset: "pre",
-                          tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/21705426382/1.1&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=https%3A%2F%2Fwww.metube.id%2Flive%2FTRANS7&description_url=https%3A%2F%2Fwww.metube.id%2Flive%2FTRANS7&cust_params=Live%3D183"
+                          tag: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/21705426382/1.1&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=https%3A%2F%2Fwww.metube.id%2Flive%2FRCTI&description_url=https%3A%2F%2Fwww.metube.id%2Flive%2FRCTI&cust_params=Live%3D1"
                         }
                       }
-                    },
-                                        ga: {
-                                                "idstring": "TRANS7",
-                        "label": "183"
-                                            }
+                    }                    
                 });
-                jwplayer('myElement').on('error', function () {
-                                    if (jwplayer('myElement').getPlaylistIndex() >= (jwplayer('myElement').getPlaylist().length - 1)) {
-                        $('#player-play').html('<img width="100%" height="431.44" src="https://www.metube.id/cc-content/themes/default/images/metube_error_player.jpg" alt="meTube error player"/>');
-                    } else {
-                        jwplayer('myElement').next();
+                jwplayer('livePlay').on('error', function () {
+                    if (jwplayer('livePlay').getPlaylistIndex() >= (jwplayer('livePlay').getPlaylist().length - 1)) {
+                                                    $('#player-play').html('<img width="100%" src="https://www.metube.id/cc-content/themes/default/images/oops.png" alt="RCTI"/>');
+                                            } else {
+                        jwplayer('livePlay').next();
                     }
-                                });
-                jwplayer('myElement').on('play', function () {
-                                     });
-                
+                });
             </script>
             <!-- END VIDEO -->
 
